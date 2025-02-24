@@ -11,10 +11,12 @@
     }
   },
   "scripts": {
-    "build": "tsup",
-    "dev": "tsup --watch",
     "lint": "eslint . --max-warnings 0",
     "clean": "rm -rf .turbo node_modules dist"
+  },
+  "_comment": {
+    "build": "tsup",
+    "dev": "tsup --watch"
   },
   "devDependencies": {
     "@repo/eslint-config": "workspace:*",
