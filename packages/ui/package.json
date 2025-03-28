@@ -26,6 +26,7 @@
     "typescript": "5.5.4"
   },
   "dependencies": {
+    "@heroicons/react": "^2.2.0",
     "class-variance-authority": "^0.7.1",
     "react": "^18.2.0"
   },
