@@ -1,43 +1,44 @@
 import Image from 'next/image';
 import { cva } from "class-variance-authority";
-import { LightBulbIcon } from "@heroicons/react/24/outline";
+import { LightBulbIcon, ScissorsIcon, WrenchIcon } from "@heroicons/react/24/outline";
 
 export interface CardProps {
-  children: React.ReactNode;
+  children?: React.ReactNode;
   /** title of card */
   title?: string;
   /** image or video url; placed at top of card */
   media_url?: string;
+  /** supplied by heroicons */
+  icon?: "lightBulb" | "scissors" | "wrench";
+  size?: "standard" | "small";
 }
 
 export function Card({
   children,
   title,
-  media_url
+  media_url,
+  icon,
+  size = "standard"
 }: CardProps): JSX.Element {
 
-
-  // const buttonVariants = cva(['leading-none'], {
-  //   variants: {
-  //     intent: {
-  //       primary: ['bg-orange-400', 'text-white'],
-  //       secondary: ['bg-gray-200', 'text-gray-800'],
-  //     },
-  //     size: {
-  //       sm: ['p-1'],
-  //       md: ['p-2'],
-  //       lg: ['px-4', 'py-2'],
-  //     }
-  //   },
-  //   defaultVariants: {
-  //     intent: "primary",
-  //     size: "md",
-  //   }
-  // });
-  const cardVariants = cva(['border', 'rounded-lg', 'border-gray-200', 'flex', 'flex-col', 'overflow-hidden'], {})
+  const cardVariants = cva(['border', 'rounded-lg', 'border-gray-200', 'flex', 'flex-col', 'overflow-hidden'])
   const mediaVariants = cva([])
-  const titleVariants = cva(['border-b', 'p-4', 'text-md', 'font-bold', 'uppercase', 'flex', 'gap-2'], {})
-  const bodyVariants = cva(['p-4'])
+  const titleVariants = cva(['border-b', 'text-md', 'font-bold', 'uppercase', 'flex', 'gap-2'], {
+    variants: {
+      size: {
+        standard: ['p-4'],
+        small: ['p-2']
+      }
+    }
+  })
+  const bodyVariants = cva([], {
+    variants: {
+      size: {
+        standard: ['p-4'],
+        small: ['p-2']
+      }
+    }
+  })
 
   return (
     <div
@@ -55,12 +56,14 @@ export function Card({
         </div>
       )}
       {title && (
-        <div className={titleVariants()}>
-          <LightBulbIcon className="size-6 text-blue" />
+        <div className={titleVariants({ size })}>
+          {icon == "lightBulb" && (<LightBulbIcon className="size-6 text-blue" />)}
+          {icon == "scissors" && (<ScissorsIcon className="size-6 text-blue" />)}
+          {icon == "wrench" && (<WrenchIcon className="size-6 text-blue" />)}
           <span>{title}</span>
         </div>
       )}
-      <div className={bodyVariants({})}>
+      <div className={bodyVariants({ size })}>
         {children}
       </div>
     </div>
