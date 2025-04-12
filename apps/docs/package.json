@@ -12,6 +12,7 @@
   },
   "dependencies": {
     "@pixelrabbit/ui": "workspace:*",
+    "@storybook/addon-a11y": "^8.6.12",
     "@storybook/nextjs": "^8.6.11",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
