@@ -1,9 +1,11 @@
 @import 'tailwindcss';
 @source '../../../packages/ui/src/';
 
+:root{
+  --color-accent: #e9b516;
+}
+
 @theme {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
 }
 
 /*

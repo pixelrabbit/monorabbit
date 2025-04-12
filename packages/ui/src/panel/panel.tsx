@@ -18,9 +18,8 @@ export function Panel({
   children,
   heading,
   headingElement = "h2",
-  backgroundColor,
   backgroundUrl,
-  palette = "light",
+  palette,
   layout = "grid-3"
 }: PanelProps): JSX.Element {
 
@@ -72,7 +71,6 @@ export function Panel({
   return (
     <div
       className={panelVariants({ palette })}
-      style={{ backgroundColor }}
     >
       {backgroundUrl && (
         <img src={backgroundUrl} alt="" className="absolute size-full -z-1 object-cover opacity-5" />

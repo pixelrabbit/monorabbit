@@ -1,6 +1,8 @@
+import React from 'react';
 import Image from 'next/image';
 import { cva } from "class-variance-authority";
 import { LightBulbIcon, ScissorsIcon, WrenchIcon } from "@heroicons/react/24/outline";
+import { VideoPlayer } from "../video/video";
 
 export interface CardProps {
   children?: React.ReactNode;
@@ -20,7 +22,6 @@ export function Card({
   icon,
   size = "standard"
 }: CardProps): JSX.Element {
-
   const cardVariants = cva(['border', 'rounded-lg', 'border-gray-200', 'flex', 'flex-col', 'overflow-hidden'])
   const mediaVariants = cva([])
   const titleVariants = cva(['border-b', 'text-md', 'font-bold', 'uppercase', 'flex', 'gap-2'], {
@@ -47,9 +48,7 @@ export function Card({
       {media_url && (
         <div className={mediaVariants()}>
           {isVideoUrl(media_url) ? (
-            <video autoPlay muted loop className="aspect-video object-cover">
-              <source src={media_url} />
-            </video>
+            <VideoPlayer src={media_url} />
           ) : (
             <Image src={media_url} width={600} height={400} className="aspect-video object-cover" />
           )}

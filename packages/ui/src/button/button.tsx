@@ -13,16 +13,22 @@ export function Button({
   size
 }: ButtonProps): JSX.Element {
 
-  const buttonVariants = cva(['leading-none'], {
+  const buttonVariants = cva(['leading-none', 'rounded-sm', 'bg-linear-to-br', 'border-gray-300', 'hover:border-gray-600', 'border-1', 'transition'], {
     variants: {
       intent: {
-        primary: ['bg-orange-400', 'text-white'],
-        secondary: ['bg-gray-200', 'text-gray-800'],
+        primary: [
+          'from-white',
+          'to-gray-100'
+        ],
+        secondary: [
+          'from-white',
+          'to-orange-100'
+        ],
       },
       size: {
-        sm: ['p-1'],
+        sm: ['p-1.5', 'text-sm'],
         md: ['p-2'],
-        lg: ['px-4', 'py-2'],
+        lg: ['px-4', 'py-2', 'text-lg'],
       }
     },
     defaultVariants: {
