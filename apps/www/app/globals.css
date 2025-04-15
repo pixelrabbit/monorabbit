@@ -39,7 +39,10 @@
 }
 
 body {
-  color: var(--foreground);
-  background: var(--background);
+  color: var(--color-white);
+  background: var(--color-slate-700);
   font-family: var(--font-roboto), Arial, Helvetica, sans-serif;
+}
+p {
+  font-size: 1.25rem;
 }
