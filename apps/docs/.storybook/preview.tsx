@@ -3,7 +3,10 @@ import { Roboto } from 'next/font/google';
 import "../../www/app/globals.css";
 
 export const parameters = {
-  actions: { argTypesRegex: "^on[A-Z].*" },
+  a11y: {
+    // Optional selector to inspect
+    context: '#storybook-root',
+  },
   controls: {
     matchers: {
       color: /(background|color)$/i,

@@ -50,7 +50,7 @@ export function Card({
           {isVideoUrl(media_url) ? (
             <VideoPlayer src={media_url} />
           ) : (
-            <Image src={media_url} width={600} height={400} className="aspect-video object-cover" />
+            <Image src={media_url} width={600} height={400} className="aspect-video object-cover" alt="" />
           )}
         </div>
       )}

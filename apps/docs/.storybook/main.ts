@@ -6,11 +6,15 @@ function getAbsolutePath(value) {
 }
 
 const config = {
-  stories: ["../../../packages/ui/**/*.stories.@(js|jsx|ts|tsx)"],
+  stories: [
+    "../../../packages/ui/**/*.stories.@(js|jsx|ts|tsx)",
+    "../stories/*.mdx"
+  ],
   addons: [
     getAbsolutePath("@storybook/addon-links"),
-    getAbsolutePath("@storybook/addon-essentials"),
     getAbsolutePath("@storybook/addon-a11y"),
+    getAbsolutePath("@storybook/addon-docs"),
+    getAbsolutePath("@chromatic-com/storybook")
   ],
   framework: {
     name: getAbsolutePath("@storybook/nextjs"),
