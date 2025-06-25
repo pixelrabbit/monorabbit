@@ -42,7 +42,22 @@ body {
   color: var(--color-white);
   background: var(--color-slate-800);
   font-family: var(--font-roboto), Arial, Helvetica, sans-serif;
-}
-p {
   font-size: 1.25rem;
+}
+
+.bg-abstract {
+  background: 
+  radial-gradient(circle farthest-corner at top left, rgba(225, 243, 97,1) 0%, rgba(225, 243, 97,0) 50%),
+  radial-gradient(circle farthest-side at top right, rgba(219, 95, 73, 0.5) 0%, rgba(181, 176, 177,0) 30%),
+  radial-gradient(circle farthest-corner at bottom right, rgb(125, 39, 182) 0%, rgba(204, 104, 119, 0) 75%),
+  radial-gradient(circle farthest-corner at top right, rgb(107, 188, 211) 0%, rgba(155, 221, 240,0) 60%),
+  radial-gradient(ellipse at bottom center, rgba(0, 255, 0, 0.9) 0%, rgba(0, 0, 0, 0) 100%);
+  /* background-size: 500% 100%;
+  animation: abstractAnimation 50s ease infinite; */
+}
+
+@keyframes abstractAnimation { 
+    0%{background-position:10% 0%}
+    50%{background-position:91% 100%}
+    100%{background-position:10% 0%}
 }
