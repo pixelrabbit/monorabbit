@@ -40,13 +40,13 @@ export default function RootLayout({
       >
         <div className={`${sourGummy.className} h-90 bg-lime-500 overflow-hidden text-slate-800 pb-4`}>
           <div className="max-w-7xl px-4 m-auto flex h-full justify-between items-end">
-            <div className={`self-end `}>
+            <div className={`self-end`}>
               <h1 className={`text-5xl sm:text-8xl tracking-tight`}>PiXELRABBiT</h1>
               <p>Well, he's just this developer, you know...</p>
             </div>
             <nav className="flex gap-8 text-2xl">
               {Object.entries(navItems).map(([label, href]) => (
-                <a key={label} href={href}>{label}</a>
+                <>{label}</>
               ))}
             </nav>
           </div>
