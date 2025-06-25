@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Roboto, Sour_Gummy } from "next/font/google";
 import "./globals.css";
+import { Analytics } from '@vercel/analytics/next';
 
 const roboto = Roboto({
   variable: "--font-roboto",
@@ -56,6 +57,7 @@ export default function RootLayout({
           </div>
         </div>
         <div className="max-w-7xl px-4 m-auto py-4">{children}</div>
+        <Analytics />
       </body>
     </html>
   );
