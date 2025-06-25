@@ -17,7 +17,7 @@ const sourGummy = Sour_Gummy({
 
 
 export const metadata: Metadata = {
-  title: "pixelrabbit - Austin based frontend developer and aspriing illustrator",
+  title: "pixelrabbit - Austin based frontend developer and aspiring illustrator",
   description: "TK",
 };
 
@@ -36,7 +36,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${roboto.variable}  antialiased m-0`}
+        className={`${roboto.variable} antialiased m-0`}
       >
         <div className={`${sourGummy.className} h-90 bg-lime-500 overflow-hidden text-slate-800 pb-4`}>
           <div className="max-w-7xl px-4 m-auto flex h-full justify-between items-end">
@@ -44,11 +44,6 @@ export default function RootLayout({
               <h1 className={`text-5xl sm:text-8xl tracking-tight`}>PiXELRABBiT</h1>
               <p>Well, he's just this developer, you know...</p>
             </div>
-            <nav className="flex gap-8 text-2xl">
-              {Object.entries(navItems).map(([label, href]) => (
-                <a key={label} href={href}>{label}</a>
-              ))}
-            </nav>
           </div>
         </div>
         <div className="max-w-7xl px-4 m-auto py-4">{children}</div>
